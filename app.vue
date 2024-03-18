@@ -1,6 +1,7 @@
 <template>
     <ul v-if="data">
         <li v-for="event in data.events" :key="event.title">
+            <img :src="event.imageUrl" />
             {{ event.title }}
         </li>
     </ul>
@@ -11,6 +12,7 @@ import type IEvent from "./interfaces/Event";
 const query = gql`
     query EventsQuery {
         events {
+            imageUrl
             title
         }
     }
