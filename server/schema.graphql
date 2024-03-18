@@ -1,13 +1,7 @@
 type Query {
-    books: [Book]
+    events: [Event]
 }
 
-type Book {
+type Event {
     title: String
-    author: Author
-}
-
-type Author {
-    name: String
-    books: [Book]
 }
