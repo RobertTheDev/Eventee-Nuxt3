@@ -15,6 +15,7 @@
     "dependencies": {
         "@apollo/server": "^4.10.1",
         "@as-integrations/h3": "^1.1.6",
+        "@nuxt/content": "^2.12.1",
         "graphql": "^16.8.1",
         "mongodb": "^6.5.0",
         "nuxt": "^3.11.0",
