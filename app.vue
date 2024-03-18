@@ -1,9 +1,10 @@
 <template>
     <ul v-if="data">
-        <li v-for="event in data.events" :key="event.title">
-            <img :src="event.imageUrl" />
-            {{ event.title }}
-        </li>
+        <EventCard
+            v-for="event in data.events"
+            :key="event.title"
+            v-bind="event"
+        />
     </ul>
 </template>
 <script lang="ts" setup>
