@@ -2,23 +2,13 @@
     "root": true,
     "env": {
         "browser": true,
-        "es2021": true,
         "node": true
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:vue/vue3-essential",
-        "plugin:@typescript-eslint/recommended",
-        "plugin:jsx-a11y/recommended",
-        "@nuxtjs/eslint-config-typescript",
-        "@nuxt/eslint-config",
-        "plugin:prettier/recommended"
-    ],
     "parser": "vue-eslint-parser",
     "parserOptions": {
-        "ecmaVersion": "latest",
-        "parser": "@typescript-eslint/parser",
-        "sourceType": "module"
+        "parser": "@typescript-eslint/parser"
     },
-    "plugins": ["vue", "@typescript-eslint", "prettier"]
+    "extends": ["@nuxt/eslint-config", "plugin:prettier/recommended"],
+    "plugins": [],
+    "rules": {}
 }
