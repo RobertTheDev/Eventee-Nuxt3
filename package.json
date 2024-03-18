@@ -13,11 +13,16 @@
         "postinstall": "nuxt prepare"
     },
     "dependencies": {
+        "@apollo/server": "^4.10.1",
+        "@as-integrations/h3": "^1.1.6",
+        "graphql": "^16.8.1",
         "nuxt": "^3.11.0",
+        "nuxt-graphql-server": "^3.0.0",
         "vue": "^3.4.21",
         "vue-router": "^4.3.0"
     },
     "devDependencies": {
+        "@nuxt/eslint-config": "^0.2.0",
         "@nuxtjs/apollo": "^5.0.0-alpha.13",
         "@nuxtjs/eslint-module": "^4.1.0",
         "@typescript-eslint/eslint-plugin": "^7.2.0",
@@ -26,6 +31,7 @@
         "eslint-config-prettier": "^9.1.0",
         "eslint-plugin-prettier": "^5.1.3",
         "eslint-plugin-vue": "^9.23.0",
-        "prettier": "^3.2.5"
+        "prettier": "^3.2.5",
+        "typescript": "^5.4.2"
     }
 }
