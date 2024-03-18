@@ -1,5 +1,9 @@
 <template>
-    <p>There are {{ data?.events.length || 0 }} events.</p>
+    <ul v-if="data">
+        <li v-for="event in data.events" :key="event.title">
+            {{ event.title }}
+        </li>
+    </ul>
 </template>
 <script lang="ts" setup>
 import type IEvent from "./interfaces/Event";
