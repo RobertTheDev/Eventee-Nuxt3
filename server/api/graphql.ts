@@ -12,8 +12,17 @@ async function getEvents() {
     }
 }
 
+async function getEventBySlug(slug: string) {
+    try {
+        return await mongoDb.collection("events").findOne({ slug });
+    } catch (error) {
+        console.log(error);
+    }
+}
+
 const resolvers: Resolvers = {
     Query: {
+        eventBySlug: (_root, args) => getEventBySlug(args.slug),
         events: () => getEvents(),
     },
 };

@@ -1,7 +1,10 @@
 type Query {
+    eventBySlug(slug: String!): Event
     events: [Event]
 }
 
 type Event {
-    title: String
+    imageUrl: String!
+    slug: String!
+    title: String!
 }
