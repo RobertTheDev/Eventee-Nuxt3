@@ -2,9 +2,7 @@
     <p>There are {{ data?.events.length || 0 }} events.</p>
 </template>
 <script lang="ts" setup>
-interface IEvent {
-    title: string;
-}
+import type IEvent from "./interfaces/Event";
 
 const query = gql`
     query EventsQuery {
