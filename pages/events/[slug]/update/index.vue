@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <p>Update Fundraiser</p>
-    </div>
+    <EventUpdateEventForm />
 </template>
 
 <style scoped lang="ts"></style>

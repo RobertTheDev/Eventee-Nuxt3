@@ -1,7 +1,5 @@
 <template>
-    <div>
-        <p>Create Fundraiser</p>
-    </div>
+    <EventCreateEventForm />
 </template>
 
 <style scoped lang="ts"></style>
