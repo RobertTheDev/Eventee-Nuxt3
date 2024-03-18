@@ -1,6 +1,18 @@
 type Query {
-    eventBySlug(slug: String!): Event
+    event(slug: String!): Event
     events: [Event]
+}
+
+type Mutation {
+    createEvent(input: EventInput!): Event
+    deleteEvent(slug: String!): Event
+    updateEvent(slug: String!, input: EventInput!): Event
+}
+
+input EventInput {
+    imageUrl: String!
+    slug: String!
+    title: String!
 }
 
 type Event {
