@@ -1,5 +1,5 @@
 <template>
-    <ul>
+    <ul v-if="data">
         <EventCard
             v-for="event in data.events"
             :key="event.title"
