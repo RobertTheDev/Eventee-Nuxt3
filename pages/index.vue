@@ -1,7 +1,9 @@
 <template>
     <div>
-        <NuxtLink to="/events/create">Create Event</NuxtLink>
-        <ul v-if="data">
+        <ul
+            v-if="data"
+            class="gap-8 grid grid-cols-4 items-center min-w-full px-8 py-8"
+        >
             <EventCard
                 v-for="event in data.events"
                 :key="event.title"

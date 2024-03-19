@@ -1,8 +1,8 @@
 <template>
-    <div>
+    <div class="flex flex-col items-center min-h-screen min-w-full">
         <NuxtLoadingIndicator />
         <LayoutHeader />
-        <main>
+        <main class="flex flex-1">
             <slot />
         </main>
         <LayoutFooter />
