@@ -1,5 +1,5 @@
 <template>
-    <EventCreateEventForm />
+    <div class="min-w-full flex flex-col items-center">
+        <EventCreateEventForm />
+    </div>
 </template>
-
-<style scoped lang="ts"></style>
