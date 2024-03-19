@@ -2,7 +2,7 @@
     <div>
         <ul
             v-if="data"
-            class="gap-8 grid grid-cols-4 items-center min-w-full px-8 py-8"
+            class="gap-12 grid grid-cols-4 items-center min-w-full px-12 py-12"
         >
             <EventCard
                 v-for="event in data.events"

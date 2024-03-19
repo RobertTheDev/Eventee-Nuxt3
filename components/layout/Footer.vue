@@ -1,5 +1,5 @@
 <template>
-    <footer class="bg-slate-100 flex items-center min-w-full px-8 py-6">
+    <footer class="bg-slate-50 flex items-center min-w-full px-12 py-4">
         <nav class="flex gap-16 items-center justify-center min-w-full">
             <NuxtLink
                 v-for="footerLink in footerLinks"
