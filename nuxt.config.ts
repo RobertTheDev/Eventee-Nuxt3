@@ -7,6 +7,7 @@ export default defineNuxtConfig({
         "@nuxtjs/apollo",
         "nuxt-graphql-server",
         "@nuxt/content",
+        "@nuxtjs/tailwindcss",
     ],
     graphqlServer: {
         schema: "./server/**/*.graphql",

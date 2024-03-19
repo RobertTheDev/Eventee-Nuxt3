@@ -27,6 +27,7 @@
         "@nuxt/eslint-config": "^0.2.0",
         "@nuxtjs/apollo": "^5.0.0-alpha.13",
         "@nuxtjs/eslint-module": "^4.1.0",
+        "@nuxtjs/tailwindcss": "^6.11.4",
         "@typescript-eslint/eslint-plugin": "^7.2.0",
         "@typescript-eslint/parser": "^7.2.0",
         "eslint": "^8.57.0",
