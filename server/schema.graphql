@@ -19,17 +19,16 @@ input DateTimeInput {
 }
 
 input EventInput {
-    category: String!;
-    description: String!;
-    end: DateTimeInput!;
+    category: String!
+    description: String!
+    end: DateTimeInput!
     imageUrl: String!
     slug: String!
-    start: DateTimeInput!;
+    start: DateTimeInput!
     title: String!
-    type: String;
-    venue: EventVenueInput!;
+    type: String
+    venue: EventVenueInput!
 }
- 
 
 type DateTime {
     date: String!
@@ -37,18 +36,18 @@ type DateTime {
 }
 
 type EventVenue {
-    address: String!;
+    address: String!
 }
 
 type Event {
-    _id: String!;
-    category: String!;
-    description: String!;
-    end: DateTime!;
+    _id: String!
+    category: String!
+    description: String!
+    end: DateTime!
     imageUrl: String!
     slug: String!
-    start: DateTime!;
+    start: DateTime!
     title: String!
-    type: String!;
-    venue: EventVenue!;
+    type: String!
+    venue: EventVenue!
 }
