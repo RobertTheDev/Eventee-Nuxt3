@@ -1,5 +1,8 @@
 <template>
-    <div class="min-w-full overflow-hidden rounded-lg shadow-md">
+    <div
+        class="min-w-full overflow-hidden rounded-lg shadow-md"
+        @click="() => router.push(`/events/${event.slug}`)"
+    >
         <div class="aspect-video min-w-full overflow-hidden">
             <img :src="event.imageUrl" class="min-w-full object-cover" />
         </div>
@@ -20,4 +23,6 @@
 import type IEvent from "~/interfaces/Event";
 
 const event = defineProps<IEvent>();
+
+const router = useRouter();
 </script>
