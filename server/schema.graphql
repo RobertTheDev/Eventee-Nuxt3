@@ -9,14 +9,46 @@ type Mutation {
     updateEvent(slug: String!, input: EventInput!): Event
 }
 
+input EventVenueInput {
+    address: String!
+}
+
+input DateTimeInput {
+    date: String!
+    time: String!
+}
+
 input EventInput {
+    category: String!;
+    description: String!;
+    end: DateTimeInput!;
     imageUrl: String!
     slug: String!
+    start: DateTimeInput!;
     title: String!
+    type: String;
+    venue: EventVenueInput!;
+}
+ 
+
+type DateTime {
+    date: String!
+    time: String!
+}
+
+type EventVenue {
+    address: String!;
 }
 
 type Event {
+    _id: String!;
+    category: String!;
+    description: String!;
+    end: DateTime!;
     imageUrl: String!
     slug: String!
+    start: DateTime!;
     title: String!
+    type: String!;
+    venue: EventVenue!;
 }
