@@ -1,6 +1,6 @@
 <template>
     <div
-        class="min-w-full overflow-hidden rounded-lg shadow-md"
+        class="min-w-full overflow-hidden rounded-lg shadow-md hover:cursor-pointer"
         @click="() => router.push(`/events/${event.slug}`)"
     >
         <div class="aspect-video min-w-full overflow-hidden">
