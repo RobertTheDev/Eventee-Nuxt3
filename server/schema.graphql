@@ -7,6 +7,9 @@ type Mutation {
     createEvent(input: EventInput!): Event
     deleteEvent(slug: String!): Event
     updateEvent(slug: String!, input: EventInput!): Event
+    signIn(input: SignInInput!): AuthUser!
+    signUp(input: SignUpInput!): AuthUser!
+    currentUser: User
 }
 
 input EventVenueInput {
@@ -50,4 +53,30 @@ type Event {
     title: String!
     type: String!
     venue: EventVenue!
+}
+
+type User {
+    _id: String!
+    email: String!
+    name: String!
+    password: String!
+}
+
+type AuthUser {
+    _id: String!
+    email: String!
+    name: String!
+    password: String!
+    token: String!
+}
+
+input SignInInput {
+    email: String!
+    password: String!
+}
+
+input SignUpInput {
+    email: String!
+    name: String!
+    password: String!
 }
