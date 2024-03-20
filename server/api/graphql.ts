@@ -9,6 +9,7 @@ import {
     updateEvent,
     deleteEvent,
 } from "../handlers/event/event.handlers";
+import { getCurrentUser, signIn, signUp } from "../handlers/auth/auth.handlers";
 
 const resolvers: Resolvers = {
     Query: {
@@ -29,9 +30,38 @@ const resolvers: Resolvers = {
                 input: { title: string; imageUrl: string; slug: string };
             },
         ) => updateEvent(args.slug, args.input),
+        signUp: (
+            _root: unknown,
+            args: { input: { email: string; name: string; password: string } },
+        ) => signUp(args.input),
+        signIn: (
+            _root: unknown,
+            args: { input: { email: string; password: string } },
+        ) => signIn(args.input),
+        currentUser: (_root: unknown, args, context) => {
+            return context.user;
+        },
     },
 };
 
 const apollo = new ApolloServer({ typeDefs: schema, resolvers });
 
-export default startServerAndCreateH3Handler(apollo);
+export default startServerAndCreateH3Handler(apollo, {
+    context: (event) => {
+        const bearerToken = event.event.headers.get("authorization");
+
+        if (!bearerToken) {
+            return null;
+        }
+
+        const token = bearerToken.replace("Bearer ", "");
+
+        const user = getCurrentUser({ token });
+
+        if (!user) {
+            return null;
+        }
+
+        return { user };
+    },
+});
