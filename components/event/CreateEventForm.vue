@@ -1,5 +1,5 @@
 <template>
-    <form class="flex flex-col" @submit.prevent="createEvent">
+    <form class="flex flex-col" @submit.prevent="mutate()">
         <p>Create Form</p>
         <!-- Image Input -->
         <div>
@@ -106,6 +106,9 @@
             />
         </div>
 
+        <p v-if="error">{{ JSON.stringify(error) }}</p>
+        <p v-if="loading">{{ JSON.stringify(loading) }}</p>
+
         <!-- Submit Button -->
         <div>
             <button type="submit">Loading...</button>
@@ -148,7 +151,32 @@ function generateTimes(): string[] {
     return times;
 }
 
-function createEvent() {
-    alert(JSON.stringify(event.value));
-}
+const query = gql`
+    mutation createEvent($input: EventInput!) {
+        createEvent(input: $input) {
+            _id
+            category
+            description
+            end {
+                date
+                time
+            }
+            imageUrl
+            slug
+            start {
+                date
+                time
+            }
+            title
+            type
+            venue {
+                address
+            }
+        }
+    }
+`;
+
+const { mutate, error, loading } = useMutation(query, {
+    variables: { input: event.value },
+});
 </script>
