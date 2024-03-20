@@ -1,5 +1,5 @@
 import { Resolvers } from "#graphql/resolver";
-import { signIn, signUp } from "../handlers/auth/auth.handlers";
+import { signIn, signUp } from "../handlers/auths/auth.handlers";
 
 const userResolvers: Resolvers = {
     Mutation: {
